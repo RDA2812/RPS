@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en"> 
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+</head>
+<body>
+<button onclick="playRound()">Let's play!</button>
+<script>
+
+// [Math.floor(Math.random() * possibleOutcomes)]
+
+    var possibles = ["Rock", "Paper", "Scissors"];
+    var computerSelection = possibles[Math.floor(Math.random() * possibles.length)]
+    var playerAnswer = prompt("Rock, Paper or Scissors?");
+    var result = "";
+
+    function playRound(){
+        computerAnswer();
+        console.log("Computer chose:", computerSelection);
+        console.log("You chose:" , playerAnswer);
+        if (computerSelection === playerAnswer){
+
+         result = "DRAW";  
+         console.log(result);
+            
+         } else {(computerSelection === "Paper" && playerAnswer === "Scissors") 
+        result = "You win!" 
+        console.log(result);
+        
+        }
+        
+    
+
+    function computerAnswer(){
+
+        return computerSelection;
+        
+
+    }
+
+    }
+</script></button>
+</body>
+</html>
