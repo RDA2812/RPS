@@ -5,41 +5,78 @@
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
 </head>
 <body>
-<button onclick="playRound()">Let's play!</button>
-<script>
-
-// [Math.floor(Math.random() * possibleOutcomes)]
+<button onclick=game()><script>
 
     var possibles = ["Rock", "Paper", "Scissors"];
     var computerSelection = possibles[Math.floor(Math.random() * possibles.length)]
-    var playerAnswer = prompt("Rock, Paper or Scissors?");
     var result = "";
+    var playerScore = 0;
+    var computerScore = 0;
+    var i;
 
-    function playRound(){
-        computerAnswer();
+    function game(){
+        playRound(i);
+        for (i = 0; i < 3; i++);
+        
+    }
+
+    function playRound(playerAnswer, computerAnswer){
+        var playerAnswer = prompt("Rock, Paper or Scissors?");
         console.log("Computer chose:", computerSelection);
         console.log("You chose:" , playerAnswer);
         if (computerSelection === playerAnswer){
 
          result = "DRAW";  
+         computerScore ++;
+         playerScore ++;
          console.log(result);
-            
-         } else {(computerSelection === "Paper" && playerAnswer === "Scissors") 
-        result = "You win!" 
-        console.log(result);
+         console.log("Your Score:", playerScore); 
+         console.log("Computer Score:" , computerScore);
+         
+
+        } else if (computerSelection === "Rock" && playerAnswer === "Scissors"){
         
+            result = "You lose!"
+            console.log(result);
+            computerScore ++;
+            console.log("Your Score:", playerScore); 
+            console.log("Computer Score:" , computerScore);
+
+        } else if (computerSelection === "Paper" && playerAnswer === "Rock") {
+            result = "You lose!"
+            console.log(result);
+            computerScore ++;
+            console.log("Your Score:", playerScore); 
+            console.log("Computer Score:" , computerScore);
+ 
+        } else if (computerSelection === "Scissors" && playerAnswer === "Paper") {
+            result = "You lose!"
+            console.log(result);
+            computerScore ++;
+            console.log("Your Score:", playerScore); 
+            console.log("Computer Score:" , computerScore);
         }
         
-    
+        else {
+
+            result = "You win!"
+            playerScore ++;
+            console.log(result);
+            console.log("Your Score:", playerScore); 
+            console.log("Computer Score:" , computerScore);
+
+        }
 
     function computerAnswer(){
 
-        return computerSelection;
-        
-
+        return computerSelection[possibles]; 
     }
 
     }
+
+    game();
+
+
 </script></button>
 </body>
 </html>
