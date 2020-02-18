@@ -1,0 +1,46 @@
+*{
+
+font-family: 'Montserrat', sans-serif;
+background-color: rgb(142, 117, 148);
+color: rgb(214, 204, 217);
+margin: 0;
+padding: 0;
+box-sizing: border-box;
+
+}
+
+section { 
+
+height: 100vh;
+
+}
+
+h1{
+
+text-align: center;
+
+}
+
+button { 
+
+border-radius: 3px;
+border-width: 1px;
+cursor: pointer;
+padding: 10px;
+
+
+}
+
+.container  {
+
+text-align: center;
+
+
+}
+
+
+.rock {
+
+transform: rotateY(180deg);
+
+}
